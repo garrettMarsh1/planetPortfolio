@@ -32,7 +32,7 @@ var loader = new GLTFLoader();
      ( glb ) => {
          //called when the resource is loaded
          model = glb.scene;
-         model.position.set(0, 10000, 40000);
+         model.position.set(0, 0, 60000);
          scene.add( model );
          console.log(model)
          model.add(camera)
@@ -55,7 +55,7 @@ var loader = new GLTFLoader();
  load('images/sun.jpeg');
  
  const sun = new THREE.Mesh(
-   new THREE.SphereGeometry(4000, 200, 200 ),
+   new THREE.SphereGeometry(7000, 200, 200 ),
    new THREE.MeshStandardMaterial({
      map: sunTexture,
      
@@ -72,7 +72,7 @@ const mercuryTexture = new THREE.TextureLoader().
  load('images/mercury.jpeg');
  const mercuryParent = new THREE.Object3D();
  const mercury = new THREE.Mesh(
-   new THREE.SphereGeometry(100, 50, 50 ),
+   new THREE.SphereGeometry(250, 50, 50 ),
    new THREE.MeshStandardMaterial({
      map: mercuryTexture,
    })
@@ -81,14 +81,14 @@ const mercuryTexture = new THREE.TextureLoader().
  scene.add(mercuryParent);
  mercuryParent.add(mercury);
  mercuryParent.position.x = 400;
- mercury.position.x = 11000
+ mercury.position.x = 21000
 
 
  const venusTexture = new THREE.TextureLoader().
  load('images/venus.jpeg');
  const venusParent = new THREE.Object3D();
  const venus = new THREE.Mesh(
-   new THREE.SphereGeometry(220, 50, 50 ),
+   new THREE.SphereGeometry(620, 50, 50 ),
    new THREE.MeshStandardMaterial({
      map: venusTexture,
    })
@@ -97,8 +97,8 @@ const mercuryTexture = new THREE.TextureLoader().
  scene.add(venusParent);
  venusParent.add(venus);
  venusParent.position.x = 400;
- venus.position.x = 16500;
- venus.position.z = 16500;
+ venus.position.x = 26500;
+ venus.position.z = 26500;
 
 
 
@@ -109,7 +109,7 @@ const mercuryTexture = new THREE.TextureLoader().
  load('images/earth_UV.jpeg');
  const earthParent = new THREE.Object3D();
  const earth = new THREE.Mesh(
-   new THREE.SphereGeometry(240, 50, 50 ),
+   new THREE.SphereGeometry(640, 50, 50 ),
    new THREE.MeshStandardMaterial({
      map: earthTexture,
    })
@@ -118,42 +118,44 @@ const mercuryTexture = new THREE.TextureLoader().
  scene.add(earthParent);
  earthParent.add(earth);
  earthParent.position.x = 400;
- earth.position.x = -19500;
- earth.position.z = -19500;
+ earth.position.x = -39500;
+ earth.position.z = -39500;
 
 
  const marsTexture = new THREE.TextureLoader().
  load('images/mars.jpeg');
  const marsParent = new THREE.Object3D();
  const mars = new THREE.Mesh(
-   new THREE.SphereGeometry(135, 50, 50 ),
+   new THREE.SphereGeometry(335, 50, 50 ),
    new THREE.MeshStandardMaterial({
      map: marsTexture,
+     side: DoubleSide,
    })
  );
  scene.add(mars);
  scene.add(marsParent);
  marsParent.add(mars);
  marsParent.position.x = 400;
- mars.position.x = 23500;
- mars.position.z = -23500;
+ mars.position.x = 47500;
+ mars.position.z = -47500;
 
 
  const jupiterTexture = new THREE.TextureLoader().
  load('images/jupiter.jpeg');
  const jupiterParent = new THREE.Object3D();
  const jupiter = new THREE.Mesh(
-   new THREE.SphereGeometry(1200, 100, 100 ),
+   new THREE.SphereGeometry(2200, 300, 300 ),
    new THREE.MeshStandardMaterial({
      map: jupiterTexture,
+     side: DoubleSide,
    })
  );
  scene.add(jupiter);
  scene.add(jupiterParent);
  jupiterParent.add(jupiter);
  jupiterParent.position.x = 400;
- jupiter.position.x = 65000;
- jupiter.position.z = 65000;
+ jupiter.position.x = 75000;
+ jupiter.position.z = 75000;
 
 
 
@@ -161,9 +163,10 @@ const mercuryTexture = new THREE.TextureLoader().
  load('images/saturn.jpeg');
  const saturnParent = new THREE.Object3D();
  const saturn = new THREE.Mesh(
-   new THREE.SphereGeometry(940, 100, 100 ),
+   new THREE.SphereGeometry(1740, 1740, 1740 ),
    new THREE.MeshStandardMaterial({
      map: saturnTexture,
+     side: DoubleSide,
      
    })
  );
@@ -177,7 +180,7 @@ const mercuryTexture = new THREE.TextureLoader().
  const saturnRingTexture = new THREE.TextureLoader().
  load('images/saturnRing.jpeg');
  const saturnRing = new THREE.Mesh(
-   new THREE.RingGeometry(1800, 2800, 2800 ).
+   new THREE.RingGeometry(2800, 3800, 3800 ).
    rotateX(-Math.PI * 0.5),
  new THREE.MeshStandardMaterial({
    map: saturnRingTexture,
@@ -187,8 +190,8 @@ const mercuryTexture = new THREE.TextureLoader().
  );
 saturnParent.add(saturn);
 saturnParent.add(saturnRing);
-saturn.position.x = 75000;
-saturnRing.position.x = 75000;
+saturn.position.x = 95000;
+saturnRing.position.x = 95000;
 
 
 
@@ -196,9 +199,10 @@ const uranusTexture = new THREE.TextureLoader().
  load('images/uranus.jpeg');
  const uranusParent = new THREE.Object3D();
  const uranus = new THREE.Mesh(
-   new THREE.SphereGeometry(520, 100, 100 ),
+   new THREE.SphereGeometry(1520, 300, 300 ),
    new THREE.MeshStandardMaterial({
      map: uranusTexture,
+     side: DoubleSide,
    })
  );
 
@@ -207,17 +211,18 @@ const uranusTexture = new THREE.TextureLoader().
  scene.add(uranusParent)
  uranusParent.add(uranus)
  uranusParent.position.x = 400;
- uranus.position.x = -85000;
- uranus.position.z = 85000
+ uranus.position.x = -115000;
+ uranus.position.z = 115000
 
 
 const neptuneTexture = new THREE.TextureLoader().
 load('images/neptune.jpeg');
 const neptuneParent = new THREE.Object3D();
 const neptune = new THREE.Mesh(
-  new THREE.SphereGeometry(500, 100, 100 ),
+  new THREE.SphereGeometry(1500, 300, 300 ),
   new THREE.MeshStandardMaterial({
     map: neptuneTexture,
+    side: DoubleSide,
   })
 );
 
@@ -226,8 +231,8 @@ scene.add(neptune);
 scene.add(neptuneParent)
 neptuneParent.add(neptune)
 neptuneParent.position.x = 400;
-neptune.position.x = -94000;
-neptune.position.z = -94000
+neptune.position.x = -124000;
+neptune.position.z = -124000
 
 
 
@@ -245,27 +250,37 @@ function init() {
     //camera.position.set( 5, 10, 10 );
     
     scene = new THREE.Scene();
-    const light = new AmbientLight(0xffffff, 1);
+    const light = new AmbientLight(0xffffff, .6);
     scene.add(light);
+    const light2 = new THREE.PointLight( 0xfffff0, 1, 1000000 );
+    light.position.set( 400, 0, 0 );
+    scene.add( light2 );
+    const light3 = new THREE.HemisphereLight( 0xfffff0, 1, .7 );
+    light.position.set( 400, 0, 0 );
+    scene.add( light3 );
 
 
-    mesh = new THREE.Mesh( model );
-    //follow = new THREE.Object3D;
-    
+    mesh = new THREE.Mesh( model );    
     goal = new THREE.Object3D;
-    //follow = new THREE.Object3D;
     goal.position.z = -coronaSafetyDistance;
     goal.add( camera );
-    //follow.add(model);
     
- 
- //const modelParent = new THREE.Object3D(loadingManager);
- 
     
-    //var gridHelper = new THREE.GridHelper( 40, 40 );
-    //scene.add( gridHelper );
-    
-    //scene.add( new THREE.AxesHelper() );
+    const listener = new THREE.AudioListener();
+    camera.add(listener)
+
+    const audioLoader = new THREE.AudioLoader();
+
+    const backgroundSound = new THREE.Audio(listener);
+
+    audioLoader.load('audio/soundScape.mp3', function( buffer ) {
+      backgroundSound.setBuffer( buffer );
+      backgroundSound.setLoop( true );
+      backgroundSound.setVolume(0.3);
+      backgroundSound.play(onload);
+    });
+
+
 
   renderer = new THREE.WebGLRenderer( { antialias: true } );
   renderer.setSize( window.innerWidth, window.innerHeight );
