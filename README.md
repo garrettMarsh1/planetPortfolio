@@ -1,7 +1,7 @@
 # planetPortfolio
 
 
-# a fully traversable sapcve environment made with Three.js, html and css. 
+# a fully traversable space environment made with Three.js, html, and css. 
 
 #CONTROLS 
 # W - Forward
